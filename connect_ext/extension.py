@@ -38,6 +38,17 @@ class MyAwesomeProjectExtension(Extension):
 
     def validate_asset_purchase_request(self, request):
         self.logger.info(f"Obtained request with id {request['id']}")
+
+        params = []
+        for param in request['asset']['params']:
+            if param['id'] == 'first_name':
+                if param['value'] != 'test':
+                    param['value_error'] = f'Set to test to pass, you set it to {param["value"]}'
+                else:
+                    param['value_error'] = ''
+            params.append(param)
+        request['asset']['params'] = params
+
         return ValidationResponse.done(request)
 
     def validate_asset_change_request(self, request):
