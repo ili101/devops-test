@@ -3,3 +3,5 @@ htmlcov
 .coverage
 coverage.xml
 .my_awesome_project_dev.env
+dist/my_awesome_project-0.1.0-py3-none-any.whl
+dist/my-awesome-project-0.1.0.tar.gz

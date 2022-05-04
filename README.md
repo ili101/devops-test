@@ -21,4 +21,6 @@ ccli account list
 ccli project extension bootstrap
 
 poetry install
+
+docker compose run --rm my_awesome_project_dev
 ```
